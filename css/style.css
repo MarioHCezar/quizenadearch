@@ -1,9 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
 
+html{
+  color-scheme: dark light;
+}
+
 body {
   margin: 0;
   font-size: 16px;
-  background-color: lightslategray;
+  background-color: rgb(118, 121, 123);
   font-family: "Noto Sans", sans-serif;
   font-weight: 500;
   position: relative;
@@ -17,8 +21,9 @@ body {
 }
 
 header {
-  background-color: darkslateblue;
-  color: antiquewhite;
+  background-color: rgb(54, 53, 63);
+  color: rgb(241, 228, 211);
+  padding: 20px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 33% 33% 33%;
@@ -34,12 +39,12 @@ h2 {
 }
 
 .head-home {
-  background: darkslateblue;
+  background: rgb(54, 53, 63);
   grid-area: button;
   grid-column: 4 / 4;
   border: none;
   padding: 15px 45px;
-  color: antiquewhite;
+  color: rgb(241, 228, 211);
   font-family: "Noto Sans", sans-serif;
   font-size: 16px;
   cursor: pointer;
@@ -49,7 +54,7 @@ h2 {
 
 .custom-box {
   max-width: 920px;
-  background-color: whitesmoke;
+  background-color: rgb(172, 177, 190);
   margin: 60px auto;
   padding: 30px;
   border-radius: 30px;
@@ -95,8 +100,8 @@ h2 {
 .btn-try,
 .btn-home {
   padding: 15px 45px;
-  background-color: darkslateblue;
-  color: antiquewhite;
+  background-color: rgb(54, 53, 63);
+  color: rgb(241, 228, 211);
   border: none;
   border-radius: 5px;
   font-family: "Noto Sans", sans-serif;
@@ -121,7 +126,7 @@ h2 {
 }
 .quiz-box .question-number {
   font-size: 18px;
-  color: darkslateblue;
+  color: rgb(54, 53, 63);
   font-weight: 600;
   border-bottom: 1px solid #ccc;
   padding-bottom: 10px;
@@ -142,11 +147,11 @@ h2 {
 }
 
 .quiz-box .option-container .option {
-  background-color: #ccc;
+  background-color: rgb(54, 53, 63);
   padding: 15px;
   font-size: 16px;
   line-height: 22px;
-  color: #000;
+  color: rgb(241, 228, 211);
   border-radius: 10px;
   margin-bottom: 10px;
   cursor: pointer;
@@ -174,7 +179,7 @@ h2 {
   animation: slideLeft 0.5s ease forwards;
 }
 .quiz-box .option-container .option.correct {
-  color: #fff;
+  color: rgb(241, 228, 211);
 }
 
 .correct-percentage {
@@ -210,7 +215,7 @@ h2 {
 }
 
 .quiz-box .option-container .option.wrong {
-  color: #fff;
+  color: rgb(241, 228, 211);
 }
 @keyframes fadeIn {
   0% {
@@ -233,7 +238,7 @@ h2 {
   height: 38px;
   width: 38px;
   display: inline-block;
-  background-color: #ccc;
+  background-color: #5a5960;
   border-radius: 10px;
   margin-right: 3px;
   margin-top: 15px;
@@ -294,8 +299,8 @@ h2 {
 .footer {
   clear: both;
   position: fixed;
-  color: antiquewhite;
-  background-color: darkslateblue;
+  color: rgb(241, 228, 211);
+  background-color: rgb(54, 53, 63);
   padding: 20px;
   width: 100%;
   height: fit-content;
@@ -307,12 +312,12 @@ h2 {
 .select {
   font-size: 16px;
   font-weight: bold;
-  color: darkblue;
+  color: rgb(241, 228, 211);
   margin-bottom: 15px;
-  padding: auto;
+  padding: 5px;
   text-transform: capitalize;
-  border-color: darkblue;
+  border-color: rgb(54, 53, 63);
   border-width: 2px;
-  border-radius: 10px;
+  border-radius: 5px;
   box-shadow: 1px 2px 1px grey;
 }
