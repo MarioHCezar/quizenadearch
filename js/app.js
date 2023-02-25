@@ -1,5 +1,5 @@
 let quiz = [];
-const url = "./js/question.json";
+const url = "./js/questions.json";
 const questions = [];
 
 async function quizMount() {
