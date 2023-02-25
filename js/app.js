@@ -1,3 +1,17 @@
+let quiz = [];
+const url = "./js/question.json";
+const questions = [];
+
+async function quizMount() {
+  const quizQuestion = await fetch(url)
+    .then((response) => response.json())
+    .then((data) => {
+      quiz = data.slice();
+    });
+}
+
+quizMount();
+
 const questionNumber = document.querySelector(".question-number");
 const questionText = document.querySelector(".question-text");
 const optionContainer = document.querySelector(".option-container");
@@ -11,37 +25,37 @@ let filteredQuestions = "";
 let numberOfQuestions = "";
 let themeValue = "";
 
-function setTheme() {
-  themeValue = document.getElementById("select").value;
+const setTheme = () => {
+  themeValue = document.querySelector("#select").value;
   document.write.i;
   console.log(themeValue);
   filteredQuestions = quiz.filter((item) => item.theme === themeValue);
   numberOfQuestions = filteredQuestions.length;
   homeBox.querySelector(".total-questions").textContent =
     filteredQuestions.length;
-}
+};
 
 setTheme();
 
 console.log(numberOfQuestions);
 
 let questionCounter = 0;
-let currentQuestion;
+let currentQuestion = 0;
 let availableQuestions = [];
 let availableOptions = [];
 let correctAnswers = 0;
 let attempt = 0;
 let totalAttempt = 0;
 
-function quizOver() {
+const quizOver = () => {
   // hide quiz box
   quizBox.classList.add("hide");
   //show result box
   resultBox.classList.remove("hide");
   quizResult();
-}
+};
 
-function quizResult() {
+const quizResult = () => {
   resultBox.querySelector(".total-question").textContent =
     filteredQuestions.length;
   resultBox.querySelector(".total-attempt").textContent = attempt;
@@ -59,52 +73,50 @@ function quizResult() {
   } else {
     resultBox.querySelector(".percentage").classList.add("wrong-percentage");
   }
-
-  console.log(percentage);
-}
-
-function topFunction() {
-  document.documentElement.scrollTop = 0;
-}
-
-window.onbeforeunload = () => {
-  window.scrollTo(0, 0);
 };
 
-function resetQuiz() {
+const topFunction = () => {
+  document.documentElement.scrollTop = 0;
+};
+
+
+
+const resetQuiz = () => {
   questionCounter = 0;
   correctAnswers = 0;
   attempt = 0;
   totalAttempt = 0;
   resultBox.querySelector(".percentage").classList.remove("correct-percentage");
   resultBox.querySelector(".percentage").classList.remove("wrong-percentage");
-}
+};
 
-function tryAgain() {
+const tryAgain = () => {
   resultBox.classList.add("hide");
   quizBox.classList.remove("hide");
   resetQuiz();
   startQuiz();
-}
+};
 
-function homePage() {
+const homePage = () => {
   homeBox.classList.remove("hide");
   quizBox.classList.add("hide");
   resultBox.classList.add("hide");
   resetQuiz();
-}
+};
 
-function startQuiz() {
+const startQuiz = () => {
   homeBox.classList.add("hide");
   quizBox.classList.remove("hide");
   setTheme();
   setQuestion();
-  // call next question
   getNewQuestion();
-  // create indicator for the answers
   answersIndicator();
-  // top page on refresh page
-}
-console.log(themeValue.value);
+};
 
-window.onload = () => {};
+window.addEventListener("beforeunload", () => {
+  window.screenTop(0, 0);
+});
+
+window.addEventListener("load", () => {
+  setTheme();
+});

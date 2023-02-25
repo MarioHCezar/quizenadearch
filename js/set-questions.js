@@ -1,7 +1,7 @@
-function setQuestion() {
-  for (let i = 0; i < numberOfQuestions; i++) {
-    availableQuestions.push(filteredQuestions[i]);
-  }
+const setQuestion = ()=> {
+  filteredQuestions.forEach((question) => {
+    availableQuestions.push(question);
+  });
 }
 
 function getNewQuestion() {
@@ -23,9 +23,11 @@ function getNewQuestion() {
   }
 
   const optionLength = currentQuestion.options.length;
+
   for (let i = 0; i < optionLength; i++) {
     availableOptions.push(i);
   }
+
   optionContainer.textContent = "";
   let animationDelay = 0.2;
   for (let i = 0; i < optionLength; i++) {
